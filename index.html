@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vale Verde | Fazenda 2D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">✦</div>
+        <div>
+          <p class="eyebrow">Diário do campo</p>
+          <h1>Vale Verde</h1>
+        </div>
+      </div>
+      <div class="date-card">
+        <span class="sun-dot" aria-hidden="true"></span>
+        <div><strong id="day-label">Dia 1</strong><small id="weather-label">Manhã ensolarada</small></div>
+      </div>
+      <div class="wallet"><span>Saldo</span><strong id="money">R$ 420</strong></div>
+    </header>
+
+    <section class="game-layout">
+      <div class="game-wrap">
+        <canvas id="game" width="960" height="600" aria-label="Mapa da fazenda Vale Verde"></canvas>
+        <div class="game-toast" id="toast" role="status">Use WASD ou as setas para andar</div>
+        <div class="controls-hint"><kbd>WASD</kbd> mover <span>•</span> <kbd>E</kbd> interagir</div>
+      </div>
+      <aside class="sidebar">
+        <section class="panel objective-panel">
+          <div class="section-heading"><span class="panel-icon">✦</span><div><p class="eyebrow">Objetivo de hoje</p><h2>Primeira colheita</h2></div></div>
+          <p class="objective-copy">Plante, cuide e colha um canteiro para começar sua nova vida no campo.</p>
+          <div class="progress-track"><span id="progress-bar"></span></div>
+          <div class="progress-meta"><span id="progress-label">0 de 3 etapas</span><strong id="xp-label">+0 XP</strong></div>
+        </section>
+        <section class="panel inventory-panel">
+          <div class="panel-title-row"><h2>Bolsa de sementes</h2><span class="seed-count" id="seed-count">3</span></div>
+          <div class="seed-item"><span class="seed-art carrot">✿</span><div><strong>Sementes de cenoura</strong><small>Plante em terra arada</small></div></div>
+          <button class="buy-button" id="buy-seeds"><span>＋</span> Comprar 3 sementes <strong>R$ 45</strong></button>
+          <div class="seed-item fertilizer-item"><span class="seed-art fertilizer">✦</span><div><strong>Adubo orgânico</strong><small>Acelera uma muda plantada</small></div><span class="seed-count" id="fertilizer-count">0</span></div>
+          <button class="buy-button" id="buy-fertilizer"><span>＋</span> Comprar 2 adubos <strong>R$ 60</strong></button>
+        </section>
+        <section class="panel legend-panel">
+          <p class="eyebrow">Como jogar</p>
+          <div class="legend-row"><span class="legend-swatch soil"></span><span>Terra arada</span><small>Plante aqui</small></div>
+          <div class="legend-row"><span class="legend-swatch water"></span><span>Poço</span><small>Reabastece água</small></div>
+          <div class="legend-row"><span class="legend-swatch barn"></span><span>Galpão</span><small>Seu ponto de apoio</small></div>
+        </section>
+        <div class="tip-card"><span>☼</span><p><strong>Dica do fazendeiro</strong><br>Fique perto de um canteiro e pressione <b>E</b> para descobrir o que fazer.</p></div>
+      </aside>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
